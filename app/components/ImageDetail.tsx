@@ -13,7 +13,7 @@ export default function ImageDetail({ photo }: ImageDetailProps) {
         {photo.alt_description}
       </h1>
       <Image
-        className="h-auto"
+        className="h-full max-h-full object-cover"
         src={photo.urls.regular}
         alt={photo.alt_description}
         width={700}

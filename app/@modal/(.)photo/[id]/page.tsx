@@ -1,5 +1,5 @@
-'use client';
 import ImageDetail from '@/app/components/ImageDetail';
+import Overlay from '@/app/components/Overlay';
 import { getPhoto } from '@/app/lib/unsplash';
 import { useRouter } from 'next/navigation';
 interface ModalDetailPageProps {
@@ -8,19 +8,18 @@ interface ModalDetailPageProps {
   };
 }
 export default async function ModalDetailPage({
-  params,
+  params: { id },
 }: ModalDetailPageProps) {
-  const router = useRouter();
-  const photo = await getPhoto(params.id);
+  const photo = await getPhoto(id);
 
+  // console.log(photo);
   return (
-    <div
-      onClick={router.back}
-      className="fixed inset-0 bg-zinc-900/20 z-100 backdrop-blur-lg flex items-center justify-center"
-    >
+    // <div className="fixed inset-0">
+    <Overlay>
       <dialog className="w-[80vw] h-[80vh] rounded-md" open>
         <ImageDetail photo={photo} />
       </dialog>
-    </div>
+    </Overlay>
+    // </div>
   );
 }

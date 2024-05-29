@@ -11,6 +11,7 @@ interface PhotoDetailPageProps {
 export default async function PhotoDetailPage({
   params: { id },
 }: PhotoDetailPageProps) {
+  // console.log(id);
   const photo = await getPhoto(id);
   return <ImageDetail photo={photo} />;
 }
