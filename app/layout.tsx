@@ -19,8 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="grid grid-cols-2 max-w-7xl mx-auto my-8">
-          {children} {team}
+        <main className="grid grid-cols-1 max-w-7xl mx-auto my-8">
+          {children}
+          {/* {team} */}
         </main>
       </body>
     </html>

@@ -15,5 +15,5 @@ export const getPhotos = async () => {
 
 export const getPhoto = async (id: string) => {
   const url = new URL(`https://api.unsplash.com/photos/${id}`);
-  return await fetch(url, { headers }).then((res) => res.json());
+  return (await fetch(url, { headers }).then((res) => res.json())) as Photo;
 };
