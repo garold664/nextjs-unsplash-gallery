@@ -12,6 +12,7 @@ export default async function Home() {
         <div className="shadow-xl rounded  overflow-hidden" key={photo.id}>
           <Link href={`/photo/${photo.id}`}>
             <Image
+              className="h-auto"
               src={photo.urls.regular}
               alt={photo.alt_description}
               width={400}

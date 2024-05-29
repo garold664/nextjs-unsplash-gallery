@@ -13,10 +13,11 @@ export default function ImageDetail({ photo }: ImageDetailProps) {
         {photo.alt_description}
       </h1>
       <Image
+        className="h-auto"
         src={photo.urls.regular}
         alt={photo.alt_description}
-        width={1000}
-        height={1000}
+        width={700}
+        height={700}
       />
     </div>
   );
